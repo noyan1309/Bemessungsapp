@@ -570,38 +570,32 @@ with st.container(border=True):
 
     spalte_1, spalte_2 = st.columns(2)
 
+    # Linke Spalte
     with spalte_1:
 
-L = st.number_input(
-    "Spannweite L [m]",
-    min_value=0.00,
-    value=0.00,
-    step=0.10,
-    format="%.2f",
-)
+        L = st.number_input(
+            "Spannweite L [m]",
+            min_value=0.00,
+            value=0.00,
+            step=0.10,
+            format="%.2f",
+        )
 
-delta_g_k = st.number_input(
-    "Ausbaulast (Δg)",
-    min_value=0.00,
-    value=0.00,
-    step=0.10,
-    format="%.2f",
-)
+        delta_g_k = st.number_input(
+            "Ausbaulast (Δg)",
+            min_value=0.00,
+            value=0.00,
+            step=0.10,
+            format="%.2f",
+        )
 
-Q_k = st.number_input(
-    "Wandernde Einzellast Q [kN]",
-    min_value=0.00,
-    value=0.00,
-    step=0.10,
-    format="%.2f",
-)
-
+    # Rechte Spalte
     with spalte_2:
 
         Q_k = st.number_input(
-            "Einzellast Q [kN]",
+            "Wandernde Einzellast Q [kN]",
             min_value=0.00,
-            value=00.00,
+            value=0.00,
             step=0.10,
             format="%.2f",
         )
