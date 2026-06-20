@@ -696,15 +696,9 @@ if ergebnis is not None and diagramm_png is not None:
         <div class="ergebnis-kasten">
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td><b>Maßgebende Laststellung Q:</b></td>
+                    <td><b>Ungünstigste Laststelle:</b></td>
                     <td style="text-align: right;">
                         x = {ergebnis['laststellung']:.2f} m
-                    </td>
-                </tr>
-                <tr>
-                    <td><b>Position des maximalen Moments:</b></td>
-                    <td style="text-align: right;">
-                        x = {ergebnis['x_M_max']:.2f} m
                     </td>
                 </tr>
                 <tr>
@@ -712,12 +706,6 @@ if ergebnis is not None and diagramm_png is not None:
                     <td style="text-align: right;">
                         {ergebnis['sigma_Ed']:.1f} N/mm²
                         ≤ {ergebnis['sigma_Rd']:.0f} N/mm²
-                    </td>
-                </tr>
-                <tr>
-                    <td><b>Profilgewicht:</b></td>
-                    <td style="text-align: right;">
-                        {ergebnis['profilgewicht']:.1f} kg/m
                     </td>
                 </tr>
             </table>
