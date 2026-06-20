@@ -435,7 +435,7 @@ def erstelle_pdf(ergebnis, diagramm_png):
             Paragraph(f"{ergebnis['delta_g_k']:.2f} kN/m", text_style),
         ],
         [
-            Paragraph("Wandernde Einzellast Q", text_style),
+            Paragraph("Einzellast Q", text_style),
             Paragraph(f"{ergebnis['Q_k']:.2f} kN", text_style),
         ],
         [
@@ -455,12 +455,8 @@ def erstelle_pdf(ergebnis, diagramm_png):
             Paragraph(f"{ergebnis['V_Ed_max']:.2f} kN", text_style),
         ],
         [
-            Paragraph("Maßgebende Position der Einzellast", text_style),
+            Paragraph("Ungünstigste Laststelle", text_style),
             Paragraph(f"x = {ergebnis['laststellung']:.2f} m", text_style),
-        ],
-        [
-            Paragraph("Position des maximalen Moments", text_style),
-            Paragraph(f"x = {ergebnis['x_M_max']:.2f} m", text_style),
         ],
         [
             Paragraph("Vorhandene Biegespannung σ_Ed", text_style),
@@ -579,15 +575,15 @@ with st.container(border=True):
         L = st.number_input(
             "Spannweite L [m]",
             min_value=0.10,
-            value=15.00,
+            value=00.00,
             step=0.10,
             format="%.2f",
         )
 
         delta_g_k = st.number_input(
-            "Maximale Dreieckslast Δg [kN/m]",
+            "Ausbaulast Δg [kN/m]",
             min_value=0.00,
-            value=16.00,
+            value=00.00,
             step=0.10,
             format="%.2f",
         )
@@ -595,9 +591,9 @@ with st.container(border=True):
     with spalte_2:
 
         Q_k = st.number_input(
-            "Wandernde Einzellast Q [kN]",
+            "Einzellast Q [kN]",
             min_value=0.00,
-            value=18.00,
+            value=00.00,
             step=0.10,
             format="%.2f",
         )
@@ -609,7 +605,7 @@ with st.container(border=True):
         )
 
     berechnen = st.button(
-        "🔢 Berechnung durchführen",
+        "🧮 Berechnung durchführen",
         type="primary",
         use_container_width=True,
     )
@@ -648,7 +644,6 @@ if berechnen:
 
             st.error(
                 "Kein geeignetes Profil gefunden. "
-                "Die Lasten sind selbst für IPE 600 zu hoch."
             )
 
         else:
