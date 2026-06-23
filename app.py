@@ -582,7 +582,7 @@ with st.container(border=True):
         )
 
         delta_g_k = st.number_input(
-            "Ausbaulast (Δg)",
+            "Ausbaulast (Δg) [kN/m]",
             min_value=0.00,
             value=0.00,
             step=0.10,
